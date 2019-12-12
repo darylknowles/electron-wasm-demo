@@ -1,0 +1,61 @@
+{
+  "name": "electron-wasm-demo",
+  "productName": "electron-wasm-demo",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "asc src/assembly/test.ts -b src/bin/test.wasm -t src/bin/test.wat --sourceMap --validate --optimize && electron-forge start",    
+    "build:wasm": "asc src/assembly/test.ts -b src/bin/test.wasm -t src/bin/test.wat --sourceMap --validate --optimize ",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "Daryl Knowles",
+    "email": "dknowles@bellflight.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_wasm_demo"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "@assemblyscript/loader": "^0.8.1"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.8.1",
+    "@electron-forge/cli": "^6.0.0-beta.46",
+    "@electron-forge/maker-deb": "^6.0.0-beta.46",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.46",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.46",
+    "@electron-forge/maker-zip": "^6.0.0-beta.46",
+    "electron": "7.1.4"
+  }
+}
