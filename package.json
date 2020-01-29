@@ -5,7 +5,7 @@
   "description": "My Electron application description",
   "main": "src/main.js",
   "scripts": {
-    "start": "asc src/assembly/test.ts -b src/bin/test.wasm -t src/bin/test.wat --sourceMap --validate --optimize && electron-forge start",    
+    "start": "asc src/assembly/test.ts -b src/bin/test.wasm -t src/bin/test.wat --sourceMap --validate --optimize && electron-forge start",
     "build:wasm": "asc src/assembly/test.ts -b src/bin/test.wasm -t src/bin/test.wat --sourceMap --validate --optimize ",
     "package": "electron-forge package",
     "make": "electron-forge make",
@@ -50,12 +50,12 @@
     "@assemblyscript/loader": "^0.8.1"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.47",
+    "@electron-forge/maker-deb": "^6.0.0-beta.47",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.47",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.47",
+    "@electron-forge/maker-zip": "^6.0.0-beta.47",
     "assemblyscript": "^0.8.1",
-    "@electron-forge/cli": "^6.0.0-beta.46",
-    "@electron-forge/maker-deb": "^6.0.0-beta.46",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.46",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.46",
-    "@electron-forge/maker-zip": "^6.0.0-beta.46",
     "electron": "7.1.4"
   }
 }

@@ -22,7 +22,9 @@ const start = async () => {
         imports
     )
 
-    console.log(myModule.exports);
+    console.log(myModule);
+
+    console.log(myModule.magicnumber.value);
 
     console.log(myModule.add(11, 12));
 
